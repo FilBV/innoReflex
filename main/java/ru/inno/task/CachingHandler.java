@@ -20,14 +20,14 @@ public class CachingHandler<T> implements InvocationHandler {
 
         if (currentMethod.isAnnotationPresent(Cache.class)) {
             if (results.containsKey(currentMethod)) {
-                return results.get(currentMethod);//3
+                return results.get(currentMethod);
             }
             objectResult = method.invoke(currentObject, args);
-            results.put(currentMethod, objectResult);//4
+            results.put(currentMethod, objectResult);
             return objectResult;
         }
         if (currentMethod.isAnnotationPresent(Mutator.class)) {
-            results.clear(); //2
+            results.clear();
         }
         return method.invoke(currentObject, args);
     }

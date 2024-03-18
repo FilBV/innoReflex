@@ -1,8 +1,8 @@
 package ru.inno.task;
 
 public class Fraction implements Fractionable {
-    private int num;
-    private int denum;
+    private int num, denum;
+    int count;
 
     public Fraction(int num, int denum) {
         this.num = num;
@@ -23,5 +23,14 @@ public class Fraction implements Fractionable {
     @Cache
     public double doubleValue() {
         return (double) num / denum;
+    }
+
+    @Override
+    public String toString() {
+        return "Fraction{" +
+                "num=" + num +
+                ", denum=" + denum +
+                ", count=" + count +
+                '}';
     }
 }

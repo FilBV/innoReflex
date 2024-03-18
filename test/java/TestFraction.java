@@ -1,5 +1,4 @@
 
-//import lombok.AllArgsConstructor;
 import ru.inno.task.Cache;
 import ru.inno.task.Fractionable;
 import ru.inno.task.Mutator;
@@ -20,11 +19,13 @@ public class TestFraction implements Fractionable {
         count++;
         return num/denum;
     }
-    @Override @Mutator
+    @Override
+    @Mutator
     public void setNum(int num) {
         this.num=num;
     }
     @Override
+    @Mutator
     public void setDenum(int denum) {
         this.denum=denum;
     }
